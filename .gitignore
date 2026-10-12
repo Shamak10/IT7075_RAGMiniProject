@@ -1,0 +1,14 @@
+# local Python environment and course downloads (not part of the submission)
+.venv/
+course_files/
+
+# secrets: API keys live in .env, never in the repository
+.env
+
+# editor and notebook clutter
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+
+# my own notes
+YOUR_TODO.md

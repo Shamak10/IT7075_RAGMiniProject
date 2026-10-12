@@ -1,0 +1,34 @@
+experiment,chunk_size,overlap,k,max_distance,n_chunks,found,refused,correct_of_8,missed,not_refused,worst_answer_distance,closest_trap_distance,is_default
+max_distance,600,100,4,0.4,26,2,2,4,Q1 Q2 Q3 Q4,,0.555,0.6,False
+max_distance,600,100,4,0.45,26,3,2,5,Q1 Q2 Q3,,0.555,0.6,False
+max_distance,600,100,4,0.5,26,4,2,6,Q2 Q3,,0.555,0.6,False
+max_distance,600,100,4,0.525,26,4,2,6,Q2 Q3,,0.555,0.6,False
+max_distance,600,100,4,0.55,26,5,2,7,Q2,,0.555,0.6,False
+max_distance,600,100,4,0.575,26,6,2,8,,,0.555,0.6,False
+max_distance,600,100,4,0.6,26,6,2,8,,,0.555,0.6,False
+max_distance,600,100,4,0.625,26,6,1,7,,Q8,0.555,0.6,False
+max_distance,600,100,4,0.65,26,6,1,7,,Q8,0.555,0.6,False
+max_distance,600,100,4,0.7,26,6,1,7,,Q8,0.555,0.6,False
+max_distance,600,100,4,0.75,26,6,1,7,,Q8,0.555,0.6,True
+max_distance,600,100,4,0.8,26,6,1,7,,Q8,0.555,0.6,False
+max_distance,600,100,4,0.9,26,6,0,6,,Q7 Q8,0.555,0.6,False
+k,600,100,1,0.75,26,4,1,5,Q4 Q5,Q8,inf,0.6,False
+k,600,100,2,0.75,26,5,1,6,Q5,Q8,inf,0.6,False
+k,600,100,3,0.75,26,5,1,6,Q5,Q8,inf,0.6,False
+k,600,100,4,0.75,26,6,1,7,,Q8,0.555,0.6,True
+k,600,100,5,0.75,26,6,1,7,,Q8,0.555,0.6,False
+k,600,100,6,0.75,26,6,1,7,,Q8,0.555,0.6,False
+k,600,100,8,0.75,26,6,1,7,,Q8,0.555,0.6,False
+chunk_size,200,100,4,0.75,123,5,1,6,Q4,Q8,inf,0.604,False
+chunk_size,300,100,4,0.75,63,5,1,6,Q5,Q8,inf,0.589,False
+chunk_size,400,100,4,0.75,43,5,1,6,Q5,Q8,inf,0.608,False
+chunk_size,500,100,4,0.75,32,5,1,6,Q2,Q8,inf,0.601,False
+chunk_size,600,100,4,0.75,26,6,1,7,,Q8,0.555,0.6,True
+chunk_size,800,100,4,0.75,20,5,1,6,Q5,Q8,inf,0.596,False
+chunk_size,1000,100,4,0.75,16,6,1,7,,Q8,0.609,0.644,False
+chunk_size,1500,100,4,0.75,10,6,1,7,,Q8,0.662,0.607,False
+overlap,600,0,4,0.75,22,4,1,5,Q1 Q5,Q8,inf,0.6,False
+overlap,600,50,4,0.75,26,5,1,6,Q5,Q8,inf,0.6,False
+overlap,600,100,4,0.75,26,6,1,7,,Q8,0.555,0.6,True
+overlap,600,150,4,0.75,30,6,1,7,,Q8,0.64,0.6,False
+overlap,600,200,4,0.75,32,4,1,5,Q2 Q5,Q8,inf,0.583,False

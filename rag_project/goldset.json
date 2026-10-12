@@ -1,0 +1,70 @@
+{
+  "about": "Gold set for my_kb/: NIST SP 800-63B-4 and CISA guidance on passwords and multifactor authentication. 6 questions the documents answer (each with an evidence phrase copied word-for-word from its source file) and 2 they do not.",
+  "kb_files": [
+    "cisa_number_matching.md",
+    "cisa_phishing_resistant_mfa.md",
+    "nist_password_blocklist_and_storage.md",
+    "nist_password_rules.md",
+    "nist_rate_limiting_and_aal.md"
+  ],
+  "questions": [
+    {
+      "qid": "Q1",
+      "question": "How long does a password have to be if it is the only thing a user types to log in?",
+      "source": "nist_password_rules.md",
+      "evidence": ["a minimum of 15 characters in length"],
+      "answerable": true
+    },
+    {
+      "qid": "Q2",
+      "question": "Should our company force employees to change their passwords every 90 days?",
+      "source": "nist_password_rules.md",
+      "evidence": ["SHALL NOT require subscribers to change passwords periodically"],
+      "answerable": true
+    },
+    {
+      "qid": "Q3",
+      "question": "How should a website store user passwords so they stay safe if the database is stolen?",
+      "source": "nist_password_blocklist_and_storage.md",
+      "evidence": ["Passwords SHALL be salted and hashed using a suitable password hashing scheme"],
+      "answerable": true
+    },
+    {
+      "qid": "Q4",
+      "question": "How many failed login attempts in a row are allowed before the authenticator must be disabled?",
+      "source": "nist_rate_limiting_and_aal.md",
+      "evidence": ["no more than 100 by disabling that authenticator"],
+      "answerable": true
+    },
+    {
+      "qid": "Q5",
+      "question": "Which kind of MFA can actually stop a phishing attack?",
+      "source": "cisa_phishing_resistant_mfa.md",
+      "evidence": ["The only widely available phishing-resistant authentication is FIDO/WebAuthn"],
+      "answerable": true
+    },
+    {
+      "qid": "Q6",
+      "question": "How does number matching stop an attacker from push-bombing a user into approving a login?",
+      "source": "cisa_number_matching.md",
+      "evidence": ["forces the user to enter numbers from the identity platform into their app"],
+      "answerable": true
+    },
+    {
+      "qid": "Q7",
+      "question": "What is a good recipe for chocolate chip cookies?",
+      "source": null,
+      "evidence": [],
+      "answerable": false,
+      "note": "Off-topic: nothing to do with authentication."
+    },
+    {
+      "qid": "Q8",
+      "question": "How long can a session stay active before NIST requires the user to reauthenticate?",
+      "source": null,
+      "evidence": [],
+      "answerable": false,
+      "note": "Sounds right but is absent: NIST SP 800-63B-4 does set reauthentication timeouts (Sections 2.1.3, 2.2.3, 2.3.3 and 5.2), but none of that text is in my_kb/. The documents talk about NIST, authenticators and AAL levels, so retrieval finds close-looking chunks that do not contain the answer."
+    }
+  ]
+}
