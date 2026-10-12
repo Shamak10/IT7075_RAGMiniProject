@@ -1,8 +1,8 @@
 # RAG over NIST and CISA authentication guidance
 
 A retrieval-augmented generation (RAG) system, built without frameworks, that answers questions about password
-rules and multifactor authentication (MFA) from five excerpts of NIST SP 800-63B-4 and two CISA fact sheets. It
-cuts the documents into overlapping chunks, embeds them with the small local model `all-MiniLM-L6-v2`, stores them
+rules and multifactor authentication (MFA) from five documents excerpted from NIST SP 800-63B-4 and two CISA
+fact sheets. It cuts the documents into overlapping chunks, embeds them with the small local model `all-MiniLM-L6-v2`, stores them
 in ChromaDB, retrieves the chunks closest in meaning to a question, and answers only from those chunks, citing the
 file each claim came from. When nothing close enough is found, it says "I don't know" instead. Eight test questions
 (six the documents answer, two they do not) score each configuration. The experiments show that the distance

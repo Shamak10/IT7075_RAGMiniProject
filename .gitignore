@@ -12,3 +12,6 @@ __pycache__/
 
 # my own notes
 YOUR_TODO.md
+
+# the report is submitted as a PDF, not kept in the repository
+report/
