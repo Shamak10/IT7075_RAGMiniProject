@@ -1,0 +1,77 @@
+experiment,splitter,chunk_size,overlap,k,score_threshold,metric,equivalent_max_distance,n_chunks,found,refused,correct_of_8,missed,not_refused,weakest_answer_score,strongest_trap_score,like_for_like
+score_threshold,line,600,100,4,0.6,cosine,0.4,27,2,2,4,Q1 Q2 Q3 Q4,,0.384,0.376,False
+score_threshold,line,600,100,4,0.55,cosine,0.45,27,3,2,5,Q1 Q2 Q3,,0.384,0.376,False
+score_threshold,line,600,100,4,0.5,cosine,0.5,27,4,2,6,Q1 Q2,,0.384,0.376,False
+score_threshold,line,600,100,4,0.475,cosine,0.525,27,5,2,7,Q2,,0.384,0.376,False
+score_threshold,line,600,100,4,0.45,cosine,0.55,27,5,2,7,Q2,,0.384,0.376,False
+score_threshold,line,600,100,4,0.425,cosine,0.575,27,5,2,7,Q2,,0.384,0.376,True
+score_threshold,line,600,100,4,0.4,cosine,0.6,27,5,2,7,Q2,,0.384,0.376,False
+score_threshold,line,600,100,4,0.375,cosine,0.625,27,6,1,7,,Q8,0.384,0.376,False
+score_threshold,line,600,100,4,0.35,cosine,0.65,27,6,1,7,,Q8,0.384,0.376,False
+score_threshold,line,600,100,4,0.3,cosine,0.7,27,6,1,7,,Q8,0.384,0.376,False
+score_threshold,line,600,100,4,0.25,cosine,0.75,27,6,1,7,,Q8,0.384,0.376,True
+score_threshold,line,600,100,4,0.2,cosine,0.8,27,6,1,7,,Q8,0.384,0.376,False
+score_threshold,line,600,100,4,0.1,cosine,0.9,27,6,1,7,,Q8,0.384,0.376,False
+k,line,600,100,1,0.25,cosine,0.75,27,4,1,5,Q4 Q5,Q8,-inf,0.376,False
+k,line,600,100,2,0.25,cosine,0.75,27,5,1,6,Q5,Q8,-inf,0.376,False
+k,line,600,100,3,0.25,cosine,0.75,27,6,1,7,,Q8,0.384,0.376,False
+k,line,600,100,4,0.25,cosine,0.75,27,6,1,7,,Q8,0.384,0.376,True
+k,line,600,100,5,0.25,cosine,0.75,27,6,1,7,,Q8,0.384,0.376,False
+k,line,600,100,6,0.25,cosine,0.75,27,6,1,7,,Q8,0.384,0.376,False
+k,line,600,100,8,0.25,cosine,0.75,27,6,1,7,,Q8,0.384,0.376,False
+chunk_size,line,200,100,4,0.25,cosine,0.75,54,4,1,5,Q1 Q5,Q8,-inf,0.356,False
+chunk_size,line,300,100,4,0.25,cosine,0.75,48,4,1,5,Q1 Q5,Q8,-inf,0.407,False
+chunk_size,line,400,100,4,0.25,cosine,0.75,41,5,1,6,Q5,Q8,-inf,0.407,False
+chunk_size,line,500,100,4,0.25,cosine,0.75,33,5,1,6,Q5,Q8,-inf,0.379,False
+chunk_size,line,600,100,4,0.25,cosine,0.75,27,6,1,7,,Q8,0.384,0.376,True
+chunk_size,line,800,100,4,0.25,cosine,0.75,21,6,1,7,,Q8,0.4,0.376,False
+chunk_size,line,1000,100,4,0.25,cosine,0.75,15,6,1,7,,Q8,0.368,0.366,False
+chunk_size,line,1500,100,4,0.25,cosine,0.75,10,6,1,7,,Q8,0.335,0.393,False
+overlap,line,600,0,4,0.25,cosine,0.75,27,5,1,6,Q5,Q8,-inf,0.376,False
+overlap,line,600,50,4,0.25,cosine,0.75,27,6,1,7,,Q8,0.368,0.376,False
+overlap,line,600,100,4,0.25,cosine,0.75,27,6,1,7,,Q8,0.384,0.376,True
+overlap,line,600,150,4,0.25,cosine,0.75,29,5,1,6,Q5,Q8,-inf,0.379,False
+overlap,line,600,200,4,0.25,cosine,0.75,29,6,1,7,,Q8,0.384,0.379,False
+splitter,line,600,100,4,0.25,cosine,0.75,27,6,1,7,,Q8,0.384,0.376,True
+splitter,fixed,600,100,4,0.25,cosine,0.75,26,6,1,7,,Q8,0.445,0.4,False
+splitter,recursive,600,100,4,0.25,cosine,0.75,31,5,1,6,Q5,Q8,-inf,0.379,False
+splitter,line,600,100,4,0.425,cosine,0.575,27,5,2,7,Q2,,0.384,0.376,True
+splitter,fixed,600,100,4,0.425,cosine,0.575,26,6,2,8,,,0.445,0.4,False
+splitter,recursive,600,100,4,0.425,cosine,0.575,31,5,2,7,Q5,,-inf,0.379,False
+metric,line,600,100,4,0.25,cosine,0.75,27,6,1,7,,Q8,0.384,0.376,True
+metric,line,600,100,4,0.25,l2,0.53,27,5,2,7,Q2,,0.128,0.117,False
+metric,line,600,100,4,0.425,cosine,0.575,27,5,2,7,Q2,,0.384,0.376,True
+metric,line,600,100,4,0.425,l2,0.407,27,2,2,4,Q1 Q2 Q3 Q4,,0.128,0.117,False
+replicate_rag_module,fixed,600,100,4,0.6,cosine,0.4,26,2,2,4,Q1 Q2 Q3 Q4,,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.55,cosine,0.45,26,3,2,5,Q1 Q2 Q3,,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.5,cosine,0.5,26,4,2,6,Q2 Q3,,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.475,cosine,0.525,26,4,2,6,Q2 Q3,,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.45,cosine,0.55,26,5,2,7,Q2,,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.425,cosine,0.575,26,6,2,8,,,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.4,cosine,0.6,26,6,2,8,,,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.375,cosine,0.625,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.35,cosine,0.65,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.3,cosine,0.7,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.25,cosine,0.75,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.2,cosine,0.8,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,600,100,4,0.1,cosine,0.9,26,6,0,6,,Q7 Q8,0.445,0.4,False
+replicate_rag_module,fixed,600,100,1,0.25,cosine,0.75,26,4,1,5,Q4 Q5,Q8,-inf,0.4,False
+replicate_rag_module,fixed,600,100,2,0.25,cosine,0.75,26,5,1,6,Q5,Q8,-inf,0.4,False
+replicate_rag_module,fixed,600,100,3,0.25,cosine,0.75,26,5,1,6,Q5,Q8,-inf,0.4,False
+replicate_rag_module,fixed,600,100,4,0.25,cosine,0.75,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,600,100,5,0.25,cosine,0.75,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,600,100,6,0.25,cosine,0.75,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,600,100,8,0.25,cosine,0.75,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,200,100,4,0.25,cosine,0.75,118,5,1,6,Q4,Q8,-inf,0.396,False
+replicate_rag_module,fixed,300,100,4,0.25,cosine,0.75,60,5,1,6,Q5,Q8,-inf,0.411,False
+replicate_rag_module,fixed,400,100,4,0.25,cosine,0.75,41,5,1,6,Q5,Q8,-inf,0.392,False
+replicate_rag_module,fixed,500,100,4,0.25,cosine,0.75,31,5,1,6,Q2,Q8,-inf,0.399,False
+replicate_rag_module,fixed,600,100,4,0.25,cosine,0.75,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,800,100,4,0.25,cosine,0.75,20,5,1,6,Q5,Q8,-inf,0.404,False
+replicate_rag_module,fixed,1000,100,4,0.25,cosine,0.75,15,6,1,7,,Q8,0.391,0.356,False
+replicate_rag_module,fixed,1500,100,4,0.25,cosine,0.75,10,6,1,7,,Q8,0.338,0.393,False
+replicate_rag_module,fixed,600,0,4,0.25,cosine,0.75,22,4,1,5,Q1 Q5,Q8,-inf,0.4,False
+replicate_rag_module,fixed,600,50,4,0.25,cosine,0.75,24,5,1,6,Q5,Q8,-inf,0.4,False
+replicate_rag_module,fixed,600,100,4,0.25,cosine,0.75,26,6,1,7,,Q8,0.445,0.4,False
+replicate_rag_module,fixed,600,150,4,0.25,cosine,0.75,27,6,1,7,,Q8,0.36,0.4,False
+replicate_rag_module,fixed,600,200,4,0.25,cosine,0.75,31,4,1,5,Q2 Q5,Q8,-inf,0.417,False

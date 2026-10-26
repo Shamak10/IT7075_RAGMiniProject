@@ -1,0 +1,16 @@
+# Tested with Python 3.12 and the versions in brackets.
+langchain>=1.0.0                  # (1.4.7)
+langchain-core>=1.0.0             # (1.7.0) prompt templates, runnables, the | pipe
+langchain-text-splitters>=1.0.0   # (1.1.3) CharacterTextSplitter, RecursiveCharacterTextSplitter
+langchain-community>=0.3.0        # (0.4.2) TextLoader, DirectoryLoader
+langchain-chroma>=0.1.0           # (1.1.0) the Chroma vector store
+chromadb>=0.5.0                   # (1.5.9)
+langchain-huggingface>=0.1.0      # (1.2.3) HuggingFaceEmbeddings: the local all-MiniLM-L6-v2 model
+sentence-transformers>=2.2.0      # (6.2.0)
+numpy>=1.24.0                     # (2.5.4)
+pandas>=2.0.0                     # (3.1.0)
+matplotlib>=3.7.0                 # (3.11.2)
+python-dotenv>=1.0.0              # (1.2.4) reads an API key from .env, if there is one
+langchain-openai>=0.2.0           # (1.7.2) optional: used only if OPENAI_API_KEY is set
+openai>=1.3.0                     # (3.37.0) optional
+jupyter                           # (1.1.1) to open and run the notebook
