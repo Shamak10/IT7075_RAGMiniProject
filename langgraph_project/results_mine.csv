@@ -1,0 +1,11 @@
+step,keyword_list,graph,one_change,caught,missed,over_escalated,closed_ok,missed_ids,over_ids
+1,narrow (2 words),lecture graph,"remove exfil, critical, admin from the lecture list",1,5,0,6,M02 M03 M04 M05 M06,none
+2,lecture (5 words),lecture graph,baseline: the Lecture 3 rule,2,4,3,3,M02 M04 M05 M06,M07 M08 M12
+3,wider (8 words),lecture graph,"add cleared, powershell, encoded (for missed M02, M04)",4,2,3,3,M05 M06,M07 M08 M12
+4,widest (13 words),lecture graph,"add travel, dns, password, scan, test (for missed M05, M06)",6,0,5,1,none,M07 M08 M09 M10 M12
+5,widest (13 words),+ lookup_asset (first host named),"graph: add context node, lookup_asset tool, new router",6,0,5,1,none,M07 M08 M09 M10 M12
+6,widest (13 words),+ lookup_asset (host it is on),"host = the asset the alert happened on, not the first named",6,0,4,2,none,M08 M09 M10 M12
+7,widest (13 words),+ check_change (both tools),"graph: add check_change tool, a second decision",6,0,1,5,none,M10
+8,wider (8 words),+ check_change (both tools),word list back to wider; graph as in row 7,4,2,0,6,M05 M06,none
+9,lecture (5 words),+ check_change (both tools),word list back to lecture; graph as in row 7,2,4,0,6,M02 M04 M05 M06,none
+10,widest (13 words),+ router reads thread memory,graph: memory branch on (each alert on its own thread),6,0,1,5,none,M10

@@ -1,0 +1,93 @@
+{
+  "about": "My 12 labelled alerts for the LangGraph triage agent: 6 escalate, 6 close. Each is one console line describing a real alert type (Windows Security events, EDR detections, cloud audit trails, IDS/NSM and DLP rules) written in my own words. No real alert data. Hosts and change tickets are made up; the agent's asset-inventory and change-calendar tools know about them. Background reading for each alert type is in SOURCES.md.",
+  "hard_cases": {
+    "escalate_without_keywords": ["M02", "M04", "M05", "M06"],
+    "close_with_a_keyword": ["M07", "M08", "M12"]
+  },
+  "alerts": [
+    {
+      "id": "M01",
+      "source": "EDR detection",
+      "alert": "EDR on FIN-FS01: ransomware behaviour blocked after 3,400 files on the finance share were renamed to .lockd in two minutes",
+      "expected": "escalate",
+      "note": "Mass renaming on a production file share is encryption for impact (ATT&CK T1486). Even though EDR blocked it, whatever ran it is still on the network."
+    },
+    {
+      "id": "M02",
+      "source": "Windows Security event 1102",
+      "alert": "Windows event 1102 on DC01: the Security audit log was cleared by j.morris, an account outside the IT group",
+      "expected": "escalate",
+      "note": "HARD CASE, no keywords. Clearing the log on a domain controller destroys evidence (T1070.001), and a non-IT account has no reason to do it. Mild wording, serious event."
+    },
+    {
+      "id": "M03",
+      "source": "AWS CloudTrail (IAM AttachUserPolicy)",
+      "alert": "CloudTrail: IAM user ci-deploy attached AdministratorAccess to itself from an IP address never seen for this account",
+      "expected": "escalate",
+      "note": "A build-pipeline key granting itself full rights from a new IP looks like a stolen access key followed by privilege escalation (T1098)."
+    },
+    {
+      "id": "M04",
+      "source": "EDR process tree",
+      "alert": "EDR process tree on HR-LT-14: WINWORD.EXE started powershell.exe with an encoded command that then connected to a domain registered two days ago",
+      "expected": "escalate",
+      "note": "HARD CASE, no keywords. Word launching encoded PowerShell is the classic malicious-macro chain (T1566.001 then T1059.001), and a two-day-old domain is typical attacker infrastructure."
+    },
+    {
+      "id": "M05",
+      "source": "Microsoft Entra ID sign-in risk",
+      "alert": "Entra ID sign-in for a.khan from Lagos 25 minutes after a sign-in from Cincinnati, flagged as impossible travel",
+      "expected": "escalate",
+      "note": "HARD CASE, no keywords. No one can travel that fast, so someone else is using a.khan's valid credentials (T1078). The account needs a reset and a review of what it touched."
+    },
+    {
+      "id": "M06",
+      "source": "Zeek DNS logs (network security monitoring)",
+      "alert": "Zeek on PAY-DB02: 18,000 DNS queries in one hour with long random subdomains of a single unfamiliar domain",
+      "expected": "escalate",
+      "note": "HARD CASE, no keywords. Long random subdomains at high volume are DNS tunnelling (T1071.004). From a payments database that means command-and-control or data leaving the network."
+    },
+    {
+      "id": "M07",
+      "source": "Vulnerability scanner (Nessus)",
+      "alert": "Nessus scheduled scan from SCAN01 reported 4 critical findings on LAB-WEB03, a lab web server rebuilt every night",
+      "expected": "close",
+      "note": "HARD CASE, contains 'critical'. It is our own scanner on a throwaway lab host. The findings belong in the vulnerability-management queue, not the incident queue."
+    },
+    {
+      "id": "M08",
+      "source": "Windows Security event 4732",
+      "alert": "Windows event 4732: svc_sql2 was added to the local Administrators group on APP-SRV07 under change CHG-20417",
+      "expected": "close",
+      "note": "HARD CASE, contains 'admin'. The group change is the approved step of a SQL Server install, on the host the change names. An analyst checks the ticket and closes it."
+    },
+    {
+      "id": "M09",
+      "source": "Microsoft Defender Antivirus detection",
+      "alert": "Defender quarantined the EICAR test file on IT-LT-02 during the monthly antivirus check, change CHG-20450",
+      "expected": "close",
+      "note": "EICAR is a harmless test string that every antivirus product detects on purpose. IT triggers it monthly to prove the agent works."
+    },
+    {
+      "id": "M10",
+      "source": "Windows Security event 4740",
+      "alert": "Windows event 4740: p.nguyen locked out after 5 wrong passwords from their own laptop; helpdesk reset it at 09:10",
+      "expected": "close",
+      "note": "A user mistyping a password on their own device, during work hours, already resolved by the helpdesk. Five attempts is a person, not a spray."
+    },
+    {
+      "id": "M11",
+      "source": "AWS GuardDuty finding",
+      "alert": "GuardDuty Recon:EC2/PortProbeUnprotectedPort on HP-01, our internet-facing honeypot",
+      "expected": "close",
+      "note": "A honeypot exists to be probed. Internet port probes against it are the background noise it is meant to collect, not an incident."
+    },
+    {
+      "id": "M12",
+      "source": "DLP / egress volume rule",
+      "alert": "DLP rule 'possible exfiltration over 5 GB' fired for BKP-01 sending the nightly backup to our offsite backup provider, standing change CHG-19001",
+      "expected": "close",
+      "note": "HARD CASE, contains 'exfil'. The backup server sends gigabytes to the contracted provider every night under a standing change. Big volume, expected destination."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Everything in this project is plain Python: no API key, no model download, no GPU.
+langgraph==1.2.17
+langgraph-checkpoint==4.3.0
+# only for draw_ascii() of the graph in Part 9
+grandalf==0.8
+# to run the notebook
+ipykernel
