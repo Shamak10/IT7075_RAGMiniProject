@@ -1,0 +1,5 @@
+# Everything here runs offline: simulated scans, a local knowledge base, no model, no API key.
+# The course starter uses the 1.x API (mcp.server.fastmcp.FastMCP). mcp 2.x renamed it, so pin below 2.
+mcp>=1.0,<2
+# to run the notebook
+ipykernel

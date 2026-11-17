@@ -10,8 +10,14 @@ course_files/
 __pycache__/
 .DS_Store
 
-# my own notes
+# my own notes, video script and Word drafts
 YOUR_TODO.md
+VIDEO_SCRIPT.md
+*.docx
+.vscode/
 
 # the report is submitted as a PDF, not kept in the repository
 report/
+
+# written by the MCP notebook on every run
+mcp_server_stderr.log
